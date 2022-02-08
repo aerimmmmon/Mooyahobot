@@ -11,20 +11,18 @@ import javax.security.auth.login.LoginException;
 public class AExample extends ListenerAdapter {
 
     public static void main(String[] args) throws LoginException {
-        String token = "OTQwMzg4NzQwNzc2NDkzMDc3.YgGrQw.xzrvOJJ09tjPY7Fx8CSxN_FfTy0";
+        String token = "OTQwMzg4NzQwNzc2NDkzMDc3.YgGrQw.wia3-dE0br5lb-VYdgf2M6Zq-YM";
 
-        JDA jb = JDABuilder.createDefault(token).build();
-        // JDABuilder jb = (JDABuilder) JDABuilder.createDefault(token).build();
+        try {
+            JDA jb = JDABuilder.createDefault(token).build();
+            // JDABuilder jb = (JDABuilder) JDABuilder.createDefault(token).build();
 
-        jb.setAutoReconnect(true);
-        jb.getPresence().setStatus(OnlineStatus.DO_NOT_DISTURB);
-        jb.addEventListener(new AListner());
+            jb.setAutoReconnect(true);
+            jb.getPresence().setStatus(OnlineStatus.DO_NOT_DISTURB);
+            jb.addEventListener(new AListner());
 
-
-        /*try {
-            jda = jb.build();
         } catch (LoginException e1) {
             e1.printStackTrace();
-        }*/
+        }
     }
 }
